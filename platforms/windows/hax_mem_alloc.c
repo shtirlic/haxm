@@ -50,9 +50,9 @@ void * hax_vmalloc(uint32_t size, uint32_t flags)
         flags = HAX_MEM_NONPAGE;
 
     if (flags & HAX_MEM_PAGABLE) {
-        buf = ExAllocatePoolWithTag(PagedPool, size, HAX_MEM_TAG);
+        buf = ExAllocatePool2(PagedPool, size, HAX_MEM_TAG);
     } else if (flags & HAX_MEM_NONPAGE) {
-        buf = ExAllocatePoolWithTag(NonPagedPool, size, HAX_MEM_TAG);
+        buf = ExAllocatePool2(NonPagedPool, size, HAX_MEM_TAG);
     } else {
         return NULL;
     }
