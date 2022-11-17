@@ -4,3 +4,5 @@
 # Linux
 *.o
 *.cmd
+HaxmLoader/x64/
+HaxmLoader/.vs/
